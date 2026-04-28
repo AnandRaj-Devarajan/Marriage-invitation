@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anandraj & Manju - Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Noto+Serif+Tamil:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Tab Icon (Favicon) - Using a working high-quality link -->
+    <!-- <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2311/2311440.png" type="image/png"> -->
+
+    <!-- Tab Icon (Favicon) - Using your Hero Backdrop -->
+    <link rel="icon"
+        href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663580249614/riXlYphqKHGJAfWq.jpg"
+        type="image/jpeg">
+
+    <!-- WhatsApp & Social Media Preview (Open Graph ) -->
+    <meta property="og:title" content="Anandraj & Manju Wedding Invitation">
+    <meta property="og:description" content="Join us for our wedding celebration on June 7th, 2026.">
+    <meta property="og:image"
+        content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663580249614/riXlYphqKHGJAfWq.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content="YOUR_WEBSITE_URL_HERE"> -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Noto+Serif+Tamil:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -29,7 +51,7 @@
             overflow-x: hidden;
         }
 
-        /* ============ NAVIGATION ============ */
+        /* NAV */
         nav {
             position: fixed;
             top: 0;
@@ -38,7 +60,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -62,10 +84,11 @@
             color: var(--gold);
         }
 
-        /* ============ HERO SECTION ============ */
+        /* HERO */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(107, 15, 26, 0.5) 0%, rgba(74, 10, 18, 0.6) 100%), url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663580249614/riXlYphqKHGJAfWq.jpg');
+            background: linear-gradient(135deg, rgba(107, 15, 26, 0.55) 0%, rgba(74, 10, 18, 0.65) 100%),
+                url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663580249614/riXlYphqKHGJAfWq.jpg');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -81,60 +104,105 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="hearts" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M50 85 C25 85, 10 70, 10 55 C10 40, 20 30, 35 30 C45 30, 50 35, 50 35 C50 35, 55 30, 65 30 C80 30, 90 40, 90 55 C90 70, 75 85, 50 85 Z" fill="%23C9973A" opacity="0.08"/></pattern></defs><rect width="200" height="200" fill="none"/><rect width="200" height="200" fill="url(%23hearts)"/></svg>');
-            background-size: 200px 200px;
-            animation: kolam-float 20s linear infinite;
+            inset: 0;
+            /* FIXED HEART SHAPE: Using a better heart path M50,80 C20,50 10,30 50,20 C90,30 80,50 50,80 */
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 85 C25 75 10 60 10 40 C10 25 25 15 40 25 C45 28 50 35 50 35 C50 35 55 28 60 25 C75 15 90 25 90 40 C90 60 75 75 50 85 Z" fill="%23C9973A" opacity="0.15"/></svg>');
+            background-size: 100px 80px;
+            animation: kolam-float 10s linear infinite;
         }
 
         @keyframes kolam-float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(-50px) rotate(5deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-50px) rotate(5deg);
+            }
         }
 
         .hero-content {
             text-align: center;
             z-index: 10;
             animation: fadeInUp 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
 
-        .vanakkam-icon {
-            font-size: 1.2rem;
-            color: var(--light-gold);
+        /* VANAKKAM SVG ICON */
+        .vanakkam-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .vanakkam-hands {
             animation: float 3s ease-in-out infinite;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-        
-        .vanakkam-icon::before {
-            content: '✦ ';
-            margin-right: 0.5rem;
-        }
-        
-        .vanakkam-icon::after {
-            content: ' ✦';
-            margin-left: 0.5rem;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
         }
 
-        .hero h1 {
+        .vanakkam-label {
+            font-size: 1.4rem;
+            color: var(--light-gold);
+            letter-spacing: 6px;
+            text-transform: uppercase;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 5.5rem;
+            font-weight: 300;
+        }
+
+        .welcome-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
             color: #FFF8E7;
-            margin: 0;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.45);
             font-weight: 600;
             letter-spacing: 3px;
             line-height: 1.2;
+        }
+
+        .welcome-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--gold);
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+        }
+
+        .welcome-divider::before,
+        .welcome-divider::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* PROVISION FOR VANAKKAM ICON REPLACEMENT */
+        .custom-icon-provision {
+            width: 100px;
+            height: 100px;
+            /* border: 2px dashed var(--gold); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            border-radius: 50%;
+            /* background: rgba(255,255,255,0.1); */
         }
 
         @keyframes fadeInUp {
@@ -142,13 +210,14 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* ============ COUPLE CARDS ============ */
+        /* COUPLE SECTION */
         .couple-section {
             padding: 4rem 2rem;
             background: var(--cream);
@@ -175,10 +244,9 @@
             background: white;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             border-top: 4px solid var(--gold);
-            animation: slideIn 0.8s ease-out;
             transition: transform 0.3s ease;
         }
 
@@ -186,29 +254,18 @@
             transform: translateY(-5px);
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         .couple-card h3 {
-            font-family: 'Pinyon Script', cursive;
+            font-family: 'Pinyon Script';
+            transform: skewX(22deg);
             font-size: 2.5rem;
             color: var(--maroon);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.4rem;
         }
 
         .couple-card .family-info {
             font-size: 0.95rem;
             color: #666;
             line-height: 1.8;
-            margin: 0;
         }
 
         .couple-card .family-info p {
@@ -219,7 +276,7 @@
             color: var(--maroon);
         }
 
-        /* ============ ABOUT SECTION ============ */
+        /* ABOUT SECTION */
         .about-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
@@ -258,7 +315,7 @@
         }
 
         .highlight-box {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 3px solid var(--gold);
@@ -284,14 +341,10 @@
             color: var(--cream);
         }
 
-        /* ============ EVENTS TIMELINE ============ */
+        /* EVENTS */
         .events-section {
             padding: 4rem 2rem;
             background: var(--cream);
-        }
-
-        .events-section .section-title {
-            margin-bottom: 3rem;
         }
 
         .timeline {
@@ -313,7 +366,6 @@
         .timeline-event {
             margin-bottom: 3rem;
             position: relative;
-            animation: fadeInUp 0.8s ease-out;
         }
 
         .timeline-event:nth-child(odd) {
@@ -345,9 +397,7 @@
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 3px solid var(--gold);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
         .event-box h3 {
@@ -370,7 +420,7 @@
             color: #666;
         }
 
-        /* ============ COUNTDOWN TIMER ============ */
+        /* COUNTDOWN */
         .countdown-section {
             padding: 3rem 2rem;
             background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
@@ -392,7 +442,7 @@
         }
 
         .countdown-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 1.5rem;
             border-radius: 8px;
             border-top: 3px solid var(--gold);
@@ -412,15 +462,7 @@
             margin-top: 0.5rem;
         }
 
-        /* ============ CAROUSEL (COMMENTED OUT) ============ */
-        /* 
-        .carousel-section {
-            padding: 4rem 2rem;
-            background: var(--cream);
-        }
-        */
-
-        /* ============ VENUE SECTION ============ */
+        /* VENUE */
         .venue-section {
             padding: 4rem 2rem;
             background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
@@ -440,7 +482,7 @@
         }
 
         .venue-info {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
@@ -490,7 +532,6 @@
         .btn-primary:hover {
             background: var(--light-gold);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(201, 151, 58, 0.3);
         }
 
         .venue-map {
@@ -502,7 +543,7 @@
         .map-iframe {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
         .qr-code {
@@ -522,17 +563,11 @@
             font-size: 0.9rem;
         }
 
-        /* ============ WHATSAPP SECTION ============ */
+        /* RSVP / WHATSAPP */
         .whatsapp-section {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             background: var(--cream);
             text-align: center;
-        }
-
-        .whatsapp-section h2 {
-            font-size: 2rem;
-            color: var(--maroon);
-            margin-bottom: 2rem;
         }
 
         .btn-whatsapp {
@@ -554,7 +589,7 @@
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
         }
 
-        /* ============ FOOTER ============ */
+        /* FOOTER */
         footer {
             background: var(--maroon);
             color: var(--cream);
@@ -567,144 +602,35 @@
             margin: 0.5rem 0;
         }
 
-        /* ============ EDITABLE CONTENT PANEL ============ */
-        .edit-panel {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--maroon);
-            color: var(--cream);
-            padding: 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 999;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .edit-panel:hover {
-            background: var(--gold);
-            color: var(--maroon);
-            transform: scale(1.1);
-        }
-
-        .edit-modal {
-            display: none;
+        /* CONFETTI CANVAS */
+        #confetti-canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            overflow-y: auto;
+            pointer-events: none;
+            z-index: 9999;
         }
 
-        .edit-modal.active {
-            display: flex;
+        /* SCROLL REVEAL */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .edit-modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            margin: auto;
+        .scroll-reveal.visible {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        .edit-modal-content h2 {
-            color: var(--maroon);
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--maroon);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid var(--gold);
-            border-radius: 5px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--maroon);
-            box-shadow: 0 0 10px rgba(107, 15, 26, 0.2);
-        }
-
-        .form-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form-buttons button {
-            flex: 1;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-save {
-            background: var(--gold);
-            color: var(--maroon);
-        }
-
-        .btn-save:hover {
-            background: var(--light-gold);
-        }
-
-        .btn-cancel {
-            background: #ccc;
-            color: #333;
-        }
-
-        .btn-cancel:hover {
-            background: #aaa;
-        }
-
-        .close-modal {
-            float: right;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--maroon);
-        }
-
-        /* ============ RESPONSIVE ============ */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             nav ul {
                 gap: 1rem;
                 font-size: 0.9rem;
             }
 
-            .hero h1 {
+            .welcome-title {
                 font-size: 3rem;
             }
 
@@ -734,12 +660,6 @@
                 left: 0;
             }
 
-            .event-box {
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                white-space: normal;
-            }
-
             .event-box h3 {
                 flex-direction: column;
             }
@@ -751,30 +671,46 @@
             .hero {
                 margin-top: 80px;
             }
-
-            .edit-modal-content {
-                width: 95%;
-            }
-        }
-
-        /* ============ SCROLL ANIMATIONS ============ */
-        .fade-in {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .scroll-reveal.visible {
-            animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
 </head>
+
 <body>
-    <!-- NAVIGATION -->
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal"
+        style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s ease;">
+        <div
+            style="background: #FDF6E3; padding: 3rem; border-radius: 20px; text-align: center; max-width: 450px; width: 90%; border: 3px solid #C9973A; box-shadow: 0 20px 50px rgba(0,0,0,0.5); position: relative; animation: modalPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+            <div style="color: #6B0F1A; font-family: 'Pinyon Script', cursive; font-size: 3.5rem; margin-bottom: 1rem;">
+                Welcome</div>
+            <p style="color: #333; font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.6;">We are honored to have you
+                here. Thank you for opening our wedding invitation and sharing in our joy!</p>
+            <button id="enterSiteBtn"
+                style="background: #C9973A; color: #6B0F1A; border: none; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(201, 151, 58, 0.3);">
+                Open Invitation
+            </button>
+        </div>
+    </div>
+
+    <style>
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+    </style>
+
+    <!-- CONFETTI CANVAS -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- NAV -->
     <nav>
         <ul>
             <li><a href="#hero">Home</a></li>
@@ -785,37 +721,74 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <div class="vanakkam-icon">Welcome</div>
-            <h1>Anandraj & Manju</h1>
+            <div class="vanakkam-wrapper">
+                <!-- Provision for Vanakkam Icon (Hand Gesture) -->
+                <!-- <div class="custom-icon-provision" id="vanakkam-icon-placeholder"> -->
+                <!-- I will add vannakam icon good hand gesture here manually -->
+                <!-- <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                        stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold); opacity:0.6;">
+                        <path d="M12 2v20M2 12h20" />
+                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="4" fill="currentColor">SVG
+                            Provision</text>
+                    </svg> -->
+                <!-- </div> -->
+                <!-- <div class="vanakkam-label">வணக்கம் &nbsp;·&nbsp; Vanakkam</div> -->
+                <img src="https://static.thenounproject.com/png/ganesha-icon-111519-512.png" alt="ganesha icon"
+                    width="50" height="50" fetchpriority="high" style="filter: sepia(1) saturate(5) hue-rotate(20deg);">
+                <!-- <img src="/api/private/icons/111519/edit/?backgroundShape=SQUARE&amp;backgroundShapeColor=%23000000&amp;backgroundShapeOpacity=0&amp;exportSize=752&amp;flipX=false&amp;flipY=false&amp;foregroundColor=%23FFB258&amp;foregroundOpacity=1&amp;imageFormat=png&amp;rotation=0" alt="ganesha icon" width="50" height="5" fetchpriority="high"> -->
+            </div>
+
+            <h1 class="welcome-title">Welcome</h1>
+            <div class="welcome-divider">
+                ✦ &nbsp;
+                <!-- <span id="shubhamasthu-icon-provision" style="border: 1px dashed var(--gold); padding: 5px; display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px;"> -->
+                <!-- Provision for Shubhamasthu icon replacement -->
+                <!-- <i class="fas fa-plus" style="font-size: 0.8rem; opacity: 0.5;"></i> -->
+                <i class="fas fa-praying-hands" style="font-size: 4rem; opacity: 0.7;"></i>
+                <!-- <span style="font-size: 2.8rem; opacity: 0.5; color: #C9973A !important;">🙏</span> -->
+                </span>
+                &nbsp; ✦
+            </div>
         </div>
     </section>
 
     <!-- COUPLE SECTION -->
     <section id="couple" class="couple-section">
-        <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 2rem; font-weight: 500;">Our Family</h2>
+        <!-- Vinayagar icons removed, provision added for custom SVG icons -->
+        <!-- <div style="text-align: center; margin-bottom: 2rem;">
+            <div id="custom-svg-provision-area" style="display: flex; justify-content: center; gap: 2rem;">
+                <div
+                    style="width: 60px; height: 60px; border: 1px dashed var(--gold); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 0.7rem; color: var(--gold);">SVG 1</span>
+                </div>
+                <div
+                    style="width: 60px; height: 60px; border: 1px dashed var(--gold); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 0.7rem; color: var(--gold);">SVG 2</span>
+                </div>
+            </div>
+        </div> -->
+
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:1.2rem;font-weight:500;">Our Family</h2>
         <div class="couple-container">
-            <!-- GROOM -->
             <div class="couple-card scroll-reveal">
                 <h3>Anandraj</h3>
                 <div class="family-info">
                     <p><strong>Son of</strong></p>
-                    <p>Mr. R. Devarajan</p>
+                    <p>Thiru. R. Devarajan</p>
                     <p>&</p>
-                    <p>Mrs. D. Thilagam</p>
+                    <p>Thirumathi. D. Thilagam</p>
                 </div>
             </div>
-
-            <!-- BRIDE -->
             <div class="couple-card scroll-reveal">
                 <h3>Manju</h3>
                 <div class="family-info">
                     <p><strong>Daughter of</strong></p>
-                    <p>Mr. S. Kumar</p>
+                    <p>Thiru. S. Kumar</p>
                     <p>&</p>
-                    <p>Mrs. K. Banumathi</p>
+                    <p>Thirumathi. K. Banumathi</p>
                 </div>
             </div>
         </div>
@@ -826,8 +799,10 @@
         <div class="about-content">
             <div class="about-text scroll-reveal">
                 <h2>Join Us in Celebration</h2>
-                <p>We cordially invite you and your family to celebrate the most special moment of our lives as we unite in marriage. Your presence and blessings will make this occasion truly memorable.</p>
-                <p>Together with our families, we would be delighted to share this joyous celebration with you. We look forward to creating beautiful memories with all those we hold dear.</p>
+                <p>With the blessings of God and our elders, we joyfully invite you and your family to grace this
+                    auspicious occasion as we unite in the sacred bond of marriage.</p>
+                <p>Together with our families, we would be delighted to share this joyous celebration. We look forward
+                    to creating beautiful memories with all those we hold dear.</p>
             </div>
             <div class="about-highlights scroll-reveal">
                 <div class="highlight-box">
@@ -862,10 +837,9 @@
                 <div class="event-box">
                     <h3><i class="fas fa-spa"></i> Reception</h3>
                     <p><strong>Saturday, 6th June 2026</strong></p>
-                    <p>7:00 PM – 9:00 PM</p>
+                    <p>7:00 PM – 8:00 PM</p>
                 </div>
             </div>
-
             <div class="timeline-event scroll-reveal">
                 <div class="event-box">
                     <h3><i class="fas fa-crown"></i> Muhurtham</h3>
@@ -876,7 +850,7 @@
         </div>
     </section>
 
-    <!-- COUNTDOWN TIMER -->
+    <!-- COUNTDOWN -->
     <section class="countdown-section">
         <h2>⏳ Countdown to the Big Day</h2>
         <div class="countdown">
@@ -899,61 +873,40 @@
         </div>
     </section>
 
-    <!-- CAROUSEL (COMMENTED OUT FOR LATER USE) -->
-    <!-- 
-    <section id="carousel" class="carousel-section">
-        <h2 class="section-title">💍 Engagement Memories 💍</h2>
-        <div class="carousel-container">
-            <div class="carousel-wrapper" id="carouselWrapper">
-                <div class="carousel-item scroll-reveal">
-                    <img src="https://via.placeholder.com/800x400?text=Engagement+Photo+1" alt="Engagement Photo 1">
-                </div>
-                <div class="carousel-item scroll-reveal">
-                    <img src="https://via.placeholder.com/800x400?text=Engagement+Photo+2" alt="Engagement Photo 2">
-                </div>
-                <div class="carousel-item scroll-reveal">
-                    <img src="https://via.placeholder.com/800x400?text=Engagement+Photo+3" alt="Engagement Photo 3">
-                </div>
-                <div class="carousel-item scroll-reveal">
-                    <img src="https://via.placeholder.com/800x400?text=Engagement+Photo+4" alt="Engagement Photo 4">
-                </div>
-            </div>
-        </div>
-        <div class="carousel-controls">
-            <button class="carousel-btn" onclick="scrollCarousel(-1)">← Previous</button>
-            <button class="carousel-btn" onclick="scrollCarousel(1)">Next →</button>
-        </div>
-    </section>
-    -->
-
-    <!-- VENUE SECTION -->
+    <!-- VENUE -->
     <section id="venue" class="venue-section">
         <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> Venue Details</h2>
         <div class="venue-container">
             <div class="venue-info scroll-reveal">
                 <h3>SMG Dhanalakshmi Mahal</h3>
                 <p><strong>Thirumana Mandapam — A/C Hall</strong></p>
-                <p><strong>Address:</strong><br>Pallavan Nagar, Near Collector Bungalow, Vandhavasi Road, Kanchipuram – 631502</p>
-                <p><strong>Phone:</strong><br><a href="tel:+914427239655" style="color: var(--light-gold); text-decoration: none;">+91 44 2723 9655</a></p>
+                <p><strong>Address:</strong><br>Pallavan Nagar, Near Collector Bungalow, Vandhavasi Road, Kanchipuram –
+                    631502</p>
+                <p><strong>Phone:</strong><br><a href="tel:+914427239655"
+                        style="color:var(--light-gold);text-decoration:none;">+91 44 2723 9655</a></p>
                 <p><strong>Coordinates:</strong><br>Latitude: 12.8175186<br>Longitude: 79.6931881</p>
                 <div class="venue-buttons">
-                    <a href="https://maps.google.com/?q=12.8175186,79.6931881" target="_blank" class="btn btn-primary">📍 Open in Google Maps</a>
+                    <a href="https://maps.google.com/?q=12.8175186,79.6931881" target="_blank"
+                        class="btn btn-primary">📍 Open in Google Maps</a>
                 </div>
             </div>
-
             <div class="venue-map scroll-reveal">
                 <div class="map-iframe">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4649999999997!2d79.6931881!3d12.8175186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526a0b0b0b0b0b%3A0x0!2sSMG%20Dhanalakshmi%20Mahal!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4649999999997!2d79.6931881!3d12.8175186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526a0b0b0b0b0b%3A0x0!2sSMG%20Dhanalakshmi%20Mahal!5e0!3m2!1sen!2sin!4v1234567890"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://maps.google.com/?q=12.8175186,79.6931881" alt="Scan for Google Maps directions">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://maps.google.com/?q=12.8175186,79.6931881"
+                        alt="Scan for Google Maps directions">
                     <p>📍 Scan to get directions</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WHATSAPP RSVP -->
+    <!-- RSVP / WHATSAPP -->
     <section id="rsvp" class="whatsapp-section">
         <h2>Send Your Wishes & RSVP</h2>
         <a href="https://wa.me/917010447274" target="_blank" class="btn-whatsapp">💬 Send Wishes on WhatsApp</a>
@@ -966,159 +919,214 @@
         <p>With Best Compliments from Friends & Family</p>
     </footer>
 
-    <!-- EDITABLE CONTENT PANEL -->
-   <!-- <div class="edit-panel" onclick="openEditModal()">✏️ Edit Content</div> -->
-
-    <!-- EDIT MODAL -->
-    <div class="edit-modal" id="editModal">
-        <div class="edit-modal-content">
-            <span class="close-modal" onclick="closeEditModal()">&times;</span>
-            <h2>Edit Website Content</h2>
-            
-            <div class="form-group">
-                <label>Groom Name</label>
-                <input type="text" id="groomName" value="Anandraj">
-            </div>
-
-            <div class="form-group">
-                <label>Bride Name</label>
-                <input type="text" id="brideName" value="Manju">
-            </div>
-
-            <div class="form-group">
-                <label>About Section Text</label>
-                <textarea id="aboutText">We cordially invite you and your family to celebrate the most special moment of our lives as we unite in marriage. Your presence and blessings will make this occasion truly memorable.</textarea>
-            </div>
-
-            <div class="form-group">
-                <label>WhatsApp Number</label>
-                <input type="text" id="whatsappNumber" value="917010447274">
-            </div>
-
-            <div class="form-group">
-                <label>Hero Background Image URL</label>
-                <input type="text" id="heroBgImage" value="https://files.manuscdn.com/user_upload_by_module/session_file/310519663580249614/riXlYphqKHGJAfWq.jpg">
-            </div>
-
-            <div class="form-buttons">
-                <button class="btn-save" onclick="saveEdits()">Save Changes</button>
-                <button class="btn-cancel" onclick="closeEditModal()">Cancel</button>
-            </div>
-        </div>
-    </div>
+    <!-- NADASWARAM AUDIO (Tamil Nadu style from Pixabay) -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/audio/2025/10/01/audio_cd02a94ace.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
-        // Smooth scroll navigation
+        // ---- SMOOTH SCROLL ----
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Countdown Timer
+        // ---- COUNTDOWN ----
         function updateCountdown() {
-            const targetDate = new Date('2026-06-07T07:30:00+05:30').getTime();
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = days;
-                document.getElementById('hours').textContent = hours;
-                document.getElementById('minutes').textContent = minutes;
-                document.getElementById('seconds').textContent = seconds;
+            const target = new Date('2026-06-07T07:30:00+05:30').getTime();
+            const diff = target - Date.now();
+            if (diff > 0) {
+                document.getElementById('days').textContent = Math.floor(diff / 86400000);
+                document.getElementById('hours').textContent = Math.floor((diff % 86400000) / 3600000);
+                document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000);
+                document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000);
             }
         }
-
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        // Edit Modal Functions
-        function openEditModal() {
-            document.getElementById('editModal').classList.add('active');
-        }
+        // ---- SCROLL REVEAL ----
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-        function closeEditModal() {
-            document.getElementById('editModal').classList.remove('active');
-        }
+        // ---- NADASWARAM BACKGROUND MUSIC ----
+        // const music = document.getElementById('bgMusic');
+        // music.volume = 0.4;
+        // let musicStarted = false;
+        // function tryStartMusic() {
+        //     if (!musicStarted) {
+        //         music.play().then(() => { musicStarted = true; }).catch(err => console.log("Autoplay blocked:", err));
+        //     }
+        // }
+        // ---- UPDATED MUSIC & MODAL LOGIC ----
+        const modal = document.getElementById('welcomeModal');
+        const enterBtn = document.getElementById('enterSiteBtn');
+        const music = document.getElementById('bgMusic');
 
-        function saveEdits() {
-            const groomName = document.getElementById('groomName').value;
-            const brideName = document.getElementById('brideName').value;
-            const aboutText = document.getElementById('aboutText').value;
-            const whatsappNumber = document.getElementById('whatsappNumber').value;
-            const heroBgImage = document.getElementById('heroBgImage').value;
-
-            // Update hero section
-            document.querySelector('.hero').style.backgroundImage = `linear-gradient(135deg, rgba(107, 15, 26, 0.6) 0%, rgba(74, 10, 18, 0.7) 100%), url('${heroBgImage}')`;
-
-            // Update couple cards
-            const coupleCards = document.querySelectorAll('.couple-card');
-            coupleCards[0].querySelector('h3').textContent = groomName;
-            coupleCards[1].querySelector('h3').textContent = brideName;
-
-            // Update about section
-            document.querySelector('.about-text p').textContent = aboutText;
-
-            // Update WhatsApp link
-            document.querySelector('.btn-whatsapp').href = `https://wa.me/${whatsappNumber}`;
-
-            // Save to localStorage
-            localStorage.setItem('weddingContent', JSON.stringify({
-                groomName, brideName, aboutText, whatsappNumber, heroBgImage
-            }));
-
-            alert('Changes saved successfully!');
-            closeEditModal();
-        }
-
-        // Load saved content
-        window.addEventListener('load', () => {
-            const saved = localStorage.getItem('weddingContent');
-            if (saved) {
-                const data = JSON.parse(saved);
-                document.getElementById('groomName').value = data.groomName;
-                document.getElementById('brideName').value = data.brideName;
-                document.getElementById('aboutText').value = data.aboutText;
-                document.getElementById('whatsappNumber').value = data.whatsappNumber;
-                document.getElementById('heroBgImage').value = data.heroBgImage;
+        // function enterSite() {
+        //     // Start music
+        //     if (music) {
+        //         music.volume = 0.4;
+        //         music.play().catch(err => console.log("Playback failed:", err));
+        //     }
+        //     // Burst poppers
+        //     if (typeof triggerConfetti === 'function') triggerConfetti();
+        //     // Hide modal
+        //     modal.style.opacity = '0';
+        //     setTimeout(() => { modal.style.display = 'none'; }, 500);
+        // }
+        function enterSite() {
+            // 1. Play Music
+            if (music) {
+                music.volume = 0.4;
+                music.play().catch(err => console.log("Music error:", err));
             }
-        });
 
-        // Scroll Reveal Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // 2. Extra Poppers Burst immediately on click
+            if (typeof triggerConfetti === 'function') {
+                triggerConfetti();
+            }
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+            // 3. FORCE PAGE TO TOP
+            window.scrollTo(0, 0);
+
+            // 4. Close Modal
+            if (modal) {
+                modal.style.opacity = '0';
+                modal.style.pointerEvents = 'none'; // Prevents modal from blocking the site during fade
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 500); // Matches the 0.5s transition in your style
+            }
+        }
+
+        enterBtn.addEventListener('click', enterSite);
+
+        // Backup: Start music on first click anywhere if not already started
+        document.addEventListener('click', () => {
+            if (music && music.paused) music.play().catch(() => { });
+        }, { once: true });
+        // Trigger on first interaction
+        // document.addEventListener('click', tryStartMusic, { once: true });
+        // document.addEventListener('scroll', tryStartMusic, { once: true });
+        // document.addEventListener('touchstart', tryStartMusic, { once: true });
+
+        // ---- CONFETTI ENGINE ----
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+        const COLORS = ['#C9973A', '#E8C547', '#6B0F1A', '#FDF6E3', '#FF6B6B', '#FFD700', '#FF8C00'];
+
+        class Particle {
+            constructor(side) {
+                this.x = side === 'left' ? 0 : canvas.width;
+                this.y = canvas.height * 0.6 + Math.random() * canvas.height * 0.2;
+                const angle = side === 'left'
+                    ? (-Math.PI / 4 + Math.random() * Math.PI / 4)
+                    : (-Math.PI * 3 / 4 + Math.random() * Math.PI / 4);
+                const speed = 8 + Math.random() * 10;
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+                this.size = 6 + Math.random() * 8;
+                this.shape = Math.random() > 0.5 ? 'circle' : 'rect';
+                this.alpha = 1;
+                this.gravity = 0.3;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotSpeed = (Math.random() - 0.5) * 0.2;
+                this.alive = true;
+            }
+            update() {
+                this.vx *= 0.98;
+                this.vy += this.gravity;
+                this.x += this.vx;
+                this.y += this.vy;
+                this.rotation += this.rotSpeed;
+                this.alpha -= 0.012;
+                if (this.alpha <= 0) this.alive = false;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.alpha);
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.fillStyle = this.color;
+                if (this.shape === 'circle') {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
                 }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(element => {
-            observer.observe(element);
-        });
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('editModal');
-            if (e.target === modal) {
-                closeEditModal();
+                ctx.restore();
             }
+        }
+
+        let particles = [];
+        let animId = null;
+
+        function spawnBurst() {
+            for (let i = 0; i < 80; i++) particles.push(new Particle('left'));
+            for (let i = 0; i < 80; i++) particles.push(new Particle('right'));
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(p => p.alive);
+            particles.forEach(p => { p.update(); p.draw(); });
+            if (particles.length > 0) {
+                animId = requestAnimationFrame(animateConfetti);
+            } else {
+                animId = null;
+            }
+        }
+
+        function triggerConfetti() {
+            spawnBurst();
+            if (!animId) animateConfetti();
+        }
+
+        // ---- POPPER TRIGGERS ----
+        // 1. Trigger on page load
+        // window.addEventListener('load', () => {
+        //     setTimeout(triggerConfetti, 800);
+        //     // Attempt music play on load (though usually needs interaction)
+        //     tryStartMusic();
+        // });
+
+        // // 2. Trigger when reaching first section (hero) or rsvp section when scroll down or up
+        // const popperTargets = [document.getElementById('hero'), document.getElementById('rsvp')];
+        // const popperObserver = new IntersectionObserver(entries => {
+        //     entries.forEach(e => {
+        //         if (e.isIntersecting) {
+        //             triggerConfetti();
+        //         }
+        //     });
+        // }, { threshold: 0.4 });
+        // popperTargets.forEach(target => popperObserver.observe(target));
+        // ---- UPDATED POPPER TRIGGERS ----
+        window.addEventListener('load', () => {
+            // Burst when modal first appears
+            setTimeout(triggerConfetti, 800);
         });
+
+        // Trigger when reaching Hero or RSVP sections
+        const popperTargets = [document.getElementById('hero'), document.getElementById('rsvp')];
+        const popperObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) triggerConfetti();
+            });
+        }, { threshold: 0.4 });
+        popperTargets.forEach(target => popperObserver.observe(target));
     </script>
 </body>
+
 </html>
