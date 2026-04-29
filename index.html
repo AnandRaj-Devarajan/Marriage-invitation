@@ -994,32 +994,11 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-        // ---- NADASWARAM BACKGROUND MUSIC ----
-        // const music = document.getElementById('bgMusic');
-        // music.volume = 0.4;
-        // let musicStarted = false;
-        // function tryStartMusic() {
-        //     if (!musicStarted) {
-        //         music.play().then(() => { musicStarted = true; }).catch(err => console.log("Autoplay blocked:", err));
-        //     }
-        // }
         // ---- UPDATED MUSIC & MODAL LOGIC ----
         const modal = document.getElementById('welcomeModal');
         const enterBtn = document.getElementById('enterSiteBtn');
         const music = document.getElementById('bgMusic');
 
-        // function enterSite() {
-        //     // Start music
-        //     if (music) {
-        //         music.volume = 0.4;
-        //         music.play().catch(err => console.log("Playback failed:", err));
-        //     }
-        //     // Burst poppers
-        //     if (typeof triggerConfetti === 'function') triggerConfetti();
-        //     // Hide modal
-        //     modal.style.opacity = '0';
-        //     setTimeout(() => { modal.style.display = 'none'; }, 500);
-        // }
         function enterSite() {
             // 1. Play Music
             if (music) {
@@ -1051,10 +1030,6 @@
         document.addEventListener('click', () => {
             if (music && music.paused) music.play().catch(() => { });
         }, { once: true });
-        // Trigger on first interaction
-        // document.addEventListener('click', tryStartMusic, { once: true });
-        // document.addEventListener('scroll', tryStartMusic, { once: true });
-        // document.addEventListener('touchstart', tryStartMusic, { once: true });
 
         // ---- CONFETTI ENGINE ----
         const canvas = document.getElementById('confetti-canvas');
@@ -1133,25 +1108,6 @@
             spawnBurst();
             if (!animId) animateConfetti();
         }
-
-        // ---- POPPER TRIGGERS ----
-        // 1. Trigger on page load
-        // window.addEventListener('load', () => {
-        //     setTimeout(triggerConfetti, 800);
-        //     // Attempt music play on load (though usually needs interaction)
-        //     tryStartMusic();
-        // });
-
-        // // 2. Trigger when reaching first section (hero) or rsvp section when scroll down or up
-        // const popperTargets = [document.getElementById('hero'), document.getElementById('rsvp')];
-        // const popperObserver = new IntersectionObserver(entries => {
-        //     entries.forEach(e => {
-        //         if (e.isIntersecting) {
-        //             triggerConfetti();
-        //         }
-        //     });
-        // }, { threshold: 0.4 });
-        // popperTargets.forEach(target => popperObserver.observe(target));
         // ---- UPDATED POPPER TRIGGERS ----
         window.addEventListener('load', () => {
             // Burst when modal first appears
