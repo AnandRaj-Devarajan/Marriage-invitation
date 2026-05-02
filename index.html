@@ -27,6 +27,7 @@
         href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Noto+Serif+Tamil:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="music-visual.css">
     <style>
         * {
             margin: 0;
@@ -647,6 +648,102 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
+        /* MUSIC VISUALIZATION */
+        .music-visual {
+            position: absolute;
+            bottom: 10%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .music-visual.left {
+            left: 10%;
+        }
+
+        .music-visual.right {
+            right: 10%;
+        }
+
+        .instrument-img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .music-wave {
+            display: flex;
+            gap: 2px;
+        }
+
+        .music-bar {
+            width: 4px;
+            height: 20px;
+            background: var(--gold);
+            animation: wave-animation 1s infinite;
+        }
+
+        @keyframes wave-animation {
+            0% {
+                transform: scaleY(1);
+            }
+
+            50% {
+                transform: scaleY(1.5);
+            }
+
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        /* MUSIC VISUALIZER CORNERS */
+        .music-corner {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .music-corner.top-left {
+            top: 10%;
+            left: 10%;
+        }
+
+        .music-corner.top-right {
+            top: 10%;
+            right: 10%;
+        }
+
+        .music-corner.bottom-left {
+            bottom: 10%;
+            left: 10%;
+        }
+
+        .music-corner.bottom-right {
+            bottom: 10%;
+            right: 10%;
+        }
+
+        .instrument {
+            width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .sound-wave {
+            display: flex;
+            gap: 2px;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             nav ul {
@@ -694,6 +791,21 @@
 
             .hero {
                 margin-top: 80px;
+            }
+
+            .music-visual {
+                width: 80px;
+                height: 80px;
+            }
+
+            .music-bar {
+                width: 3px;
+                height: 15px;
+            }
+
+            .music-corner {
+                width: 60px;
+                height: 60px;
             }
         }
     </style>
@@ -792,6 +904,52 @@
                 </span>
                 &nbsp; ✦
             </div>
+        </div>
+
+        <!-- MUSIC VISUALIZATION CONTAINERS -->
+        <!-- <div class="music-visual left" id="musicVisualLeft">
+            <img src="nadhaswaram.png" alt="Nadhaswaram" class="instrument-img" id="nadhaswaramImg">
+            <div class="music-wave">
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+            </div>
+        </div>
+        <div class="music-visual right" id="musicVisualRight">
+            <img src="veenai.png" alt="Veenai" class="instrument-img" id="veenaiImg">
+            <img src="melam.png" alt="Melam" class="instrument-img" id="melamImg">
+            <div class="music-wave">
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+                <div class="music-bar"></div>
+            </div>
+        </div> -->
+
+        <!-- MUSIC VISUALIZER CORNERS -->
+        <div class="music-corner top-left" id="musicCornerTopLeft">
+            <img src="assets/sitar (1).png" class="instrument" id="nadhaswaramCorner">
+
+            <i class="fas fa-music"></i>
+            <div class="sound-wave"></div>
+        </div>
+        <div class="music-corner top-right" id="musicCornerTopRight">
+            <img src="assets/shehnai (1).png" class="instrument" id="veenaiCorner">
+            <i class="fas fa-music"></i>
+            <div class="sound-wave"></div>
+        </div>
+        <div class="music-corner bottom-left" id="musicCornerBottomLeft">
+            <img src="assets/trumpet (1).png" class="instrument" id="melamCorner">
+            <i class="fas fa-music"></i>
+            <div class="sound-wave"></div>
+        </div>
+        <div class="music-corner bottom-right" id="musicCornerBottomRight">
+            <img src="assets/thavil (1).png" class="instrument" id="veenaiCorner2">
+            <i class="fas fa-music"></i>
+            <div class="sound-wave"></div>
         </div>
     </section>
 
@@ -998,6 +1156,70 @@
         const modal = document.getElementById('welcomeModal');
         const enterBtn = document.getElementById('enterSiteBtn');
         const music = document.getElementById('bgMusic');
+
+        // Music visualizer elements
+        const musicVisualLeft = document.getElementById('musicVisualLeft');
+        const musicVisualRight = document.getElementById('musicVisualRight');
+        const nadhaswaramImg = document.getElementById('nadhaswaramImg');
+        const veenaiImg = document.getElementById('veenaiImg');
+        const melamImg = document.getElementById('melamImg');
+
+        function setMusicVisualPlaying(isPlaying) {
+            [musicVisualLeft, musicVisualRight].forEach(el => {
+                if (!el) return;
+                if (isPlaying) {
+                    el.classList.remove('paused');
+                } else {
+                    el.classList.add('paused');
+                }
+            });
+            [nadhaswaramImg, veenaiImg, melamImg].forEach(img => {
+                if (!img) return;
+                if (isPlaying) {
+                    img.classList.add('instrument-vibrating');
+                } else {
+                    img.classList.remove('instrument-vibrating');
+                }
+            });
+        }
+
+        // ---- MUSIC VISUALIZER CORNERS LOGIC ----
+        const musicCorners = [
+            document.getElementById('musicCornerTopLeft'),
+            document.getElementById('musicCornerTopRight'),
+            document.getElementById('musicCornerBottomLeft'),
+            document.getElementById('musicCornerBottomRight')
+        ];
+        const instrumentImgs = [
+            document.getElementById('nadhaswaramCorner'),
+            document.getElementById('veenaiCorner'),
+            document.getElementById('melamCorner'),
+            document.getElementById('veenaiCorner2')
+        ];
+
+        function setMusicCornersPlaying(isPlaying) {
+            musicCorners.forEach(corner => {
+                if (!corner) return;
+                if (isPlaying) {
+                    corner.classList.add('playing');
+                } else {
+                    corner.classList.remove('playing');
+                }
+            });
+            instrumentImgs.forEach(img => {
+                if (!img) return;
+                if (isPlaying) {
+                    img.classList.add('vibrating');
+                } else {
+                    img.classList.remove('vibrating');
+                }
+            });
+        }
+        if (music) {
+            music.addEventListener('play', () => setMusicCornersPlaying(true));
+            music.addEventListener('pause', () => setMusicCornersPlaying(false));
+            music.addEventListener('ended', () => setMusicCornersPlaying(false));
+        }
 
         function enterSite() {
             // 1. Play Music
